@@ -3,6 +3,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.routes import contacts, auth, users
+from src.conf.config import settings
 
 from fastapi_limiter import FastAPILimiter
 
@@ -29,7 +30,12 @@ async def startup():
     :doc-author: Trelent
     """
     r = redis.Redis(
-        host="localhost", port=6379, db=0, encoding="utf-8", decode_responses=True
+        host=settings.redis_host,
+        port=settings.redis_port,
+        password=settings.redis_password,
+        db=0,
+        encoding="utf-8",
+        decode_responses=True
     )
     await FastAPILimiter.init(r)
 
