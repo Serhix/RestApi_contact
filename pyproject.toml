@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "module214"
+name = "RestApi_contact"
 version = "0.1.0"
 description = ""
 authors = ["Strategs <127782103+Strategs@users.noreply.github.com>"]

@@ -6,7 +6,10 @@ class Settings(BaseSettings):
     postgres_user: str = 'postgres'
     postgres_password: str = 'password'
     postgres_port: int = 5432
-    sqlalchemy_database_url: str = 'postgresql+psycopg2://user:password@localhost:5432/postgres'
+    postgres_host: str = 'host'
+    sqlalchemy_database_url: str = (
+        'postgresql+psycopg2://user:password@localhost:5432/postgres'
+    )
     secret_key: str = 'secret_key'
     algorithm: str = 'HS256'
     mail_username: str = 'example@meta.ua'
